@@ -32,28 +32,28 @@ public class PersonRestController {
     public String index(Model model) {
         model.addAttribute("people", service.getAll());
         model.addAttribute("person", new Person());
-        return "index";
+        return "personIndex";
     }
     
     @GetMapping("/gender/male")
     public String getMaleGender(Model model){
         model.addAttribute("person", new Person());
         model.addAttribute("people", service.getMaleGender("Male"));
-        return "index";
+        return "personIndex";
     }
     
     @GetMapping("/gender/female")
     public String getFemaleGender(Model model){
         model.addAttribute("person", new Person());
         model.addAttribute("people", service.getFemaleGender("Female"));
-        return "index";
+        return "personIndex";
     }
     
     @GetMapping("/{id}")
     public String getId(Model model, @PathVariable("id") String id) {
         model.addAttribute("person", service.getById(id));
         model.addAttribute("people", service.getAll());
-        return "index";
+        return "personIndex";
     }
 
     @PostMapping("save")
@@ -72,7 +72,7 @@ public class PersonRestController {
     public String update(Model model, @PathVariable("id") String id) {
         model.addAttribute("person", service.getById(id));
         model.addAttribute("people", service.getAll());
-        return "update";
+        return "personUpdate";
     }
 
     @PostMapping("/put")

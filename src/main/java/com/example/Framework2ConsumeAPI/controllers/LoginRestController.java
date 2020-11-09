@@ -9,7 +9,9 @@ import com.example.Framework2ConsumeAPI.entities.rest.LoginInput;
 import com.example.Framework2ConsumeAPI.services.LoginRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
@@ -21,12 +23,14 @@ public class LoginRestController {
     LoginRestService service;
     
     @GetMapping("")
-    public String index(){
-        LoginInput input = new LoginInput();
-        input.setEmail("josua5ade@gmail.com");
-        input.setPassword("11qwerty");
+    public String index(Model model){
+        model.addAttribute("logininput",new LoginInput());
+        return "formLogin";
+    }
+    @PostMapping("login")
+    public String login(LoginInput input) {
+        System.out.println(input);
         System.out.println(service.login(input));
-        
-        return "redirect:/person";
+        return "landingPage";
     }
 }
