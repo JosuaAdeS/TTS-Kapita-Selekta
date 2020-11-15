@@ -17,7 +17,7 @@ and open the template in the editor.
             <a href="contact">Contact</a>
             <a href="education">Education</a>
             <a href="occupation">Occupation</a>
-            <form th:object="${basic}" th:action="@{/savebasic}" method="POST">
+            <form th:object="${occupation}" th:action="@{/saveoccupation}" method="POST">
                 <table width="25%">
                     <tr>
                         <td>ID</td>
@@ -26,33 +26,23 @@ and open the template in the editor.
                     </tr>
 
                     <tr>
-                        <td>Nama</td>
+                        <td>Current Company</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{name}" /></td>
+                        <td><input type="text" th:field="*{currentCompany}" /></td>
                     </tr>
 
                     <tr>
-                        <td>Birth Date</td>
+                        <td>Job</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{birthDate}" /></td>
+                        <td><input type="text" th:field="*{job}" /></td>
                     </tr>
 
                     <tr>
-                        <td>Gender</td>
+                        <td>Website</td>
                         <td>:</td>
-                        <td>
-                            <select name="gender-list" th:field="*{gender}">
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </td>
+                        <td><input type="text" th:field="*{website}" /></td>
                     </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>:</td>
-                        <td><input type="text" th:field="*{email}" /></td>
-                    </tr>
-
+                    
                     <tr>
                         <td colspan="3"><input type="submit" value="Save" name="Save" /></td>
                     </tr>

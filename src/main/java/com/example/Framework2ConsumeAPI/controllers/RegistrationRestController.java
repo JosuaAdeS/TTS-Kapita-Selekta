@@ -20,15 +20,16 @@ public class RegistrationRestController {
     @Autowired
     RegistrationRestService service;
     
-    @GetMapping("regristrasi")
+    @GetMapping("registrasi")
     public String regris(Model model){
-        model.addAttribute("regristasi",new RegisterUser());
-        return "formRegristrasi";
+        model.addAttribute("registrasi",new RegisterUser());
+        return "formRegistrasi";
     }
     
     @PostMapping("save")
-    public String save(RegisterUser register){
-        service.register(register);
-        return "formLogin";
+    public String register(RegisterUser input){
+         System.out.println(input);
+         System.out.println(service.register(input));
+         return "redirect:/";
     }
 }

@@ -17,7 +17,7 @@ and open the template in the editor.
             <a href="contact">Contact</a>
             <a href="education">Education</a>
             <a href="occupation">Occupation</a>
-            <form th:object="${basic}" th:action="@{/savebasic}" method="POST">
+            <form th:object="${education}" th:action="@{/saveeducation}" method="POST">
                 <table width="25%">
                     <tr>
                         <td>ID</td>
@@ -26,31 +26,27 @@ and open the template in the editor.
                     </tr>
 
                     <tr>
-                        <td>Nama</td>
+                        <td>Degree</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{name}" /></td>
+                        <td><input type="text" th:field="*{degree}" /></td>
                     </tr>
 
                     <tr>
-                        <td>Birth Date</td>
+                        <td>Major</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{birthDate}" /></td>
+                        <td><input type="text" th:field="*{major}" /></td>
                     </tr>
 
                     <tr>
-                        <td>Gender</td>
+                        <td>Status</td>
                         <td>:</td>
-                        <td>
-                            <select name="gender-list" th:field="*{gender}">
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </td>
+                        <td><input type="text" th:field="*{status}" /></td>
                     </tr>
+                    
                     <tr>
-                        <td>Email</td>
+                        <td>University</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{email}" /></td>
+                        <td><input type="text" th:field="*{university}" /></td>
                     </tr>
 
                     <tr>

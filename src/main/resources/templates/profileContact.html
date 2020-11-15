@@ -17,7 +17,7 @@ and open the template in the editor.
             <a href="contact">Contact</a>
             <a href="education">Education</a>
             <a href="occupation">Occupation</a>
-            <form th:object="${basic}" th:action="@{/savebasic}" method="POST">
+            <form th:object="${contact}" th:action="@{/savecontact}" method="POST">
                 <table width="25%">
                     <tr>
                         <td>ID</td>
@@ -26,31 +26,27 @@ and open the template in the editor.
                     </tr>
 
                     <tr>
-                        <td>Nama</td>
+                        <td>Facebook</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{name}" /></td>
+                        <td><input type="text" th:field="*{facebook}" /></td>
                     </tr>
 
                     <tr>
-                        <td>Birth Date</td>
+                        <td>Instagram </td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{birthDate}" /></td>
+                        <td><input type="text" th:field="*{instagram}" /></td>
                     </tr>
 
                     <tr>
-                        <td>Gender</td>
+                        <td>Linked In </td>
                         <td>:</td>
-                        <td>
-                            <select name="gender-list" th:field="*{gender}">
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </td>
+                        <td><input type="text" th:field="*{linkedin}" /></td>
                     </tr>
+                    
                     <tr>
-                        <td>Email</td>
+                        <td>Phone</td>
                         <td>:</td>
-                        <td><input type="text" th:field="*{email}" /></td>
+                        <td><input type="text" th:field="*{phone}" /></td>
                     </tr>
 
                     <tr>
