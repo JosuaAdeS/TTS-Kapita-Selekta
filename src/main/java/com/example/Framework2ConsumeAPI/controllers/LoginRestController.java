@@ -21,16 +21,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class LoginRestController {
     @Autowired 
     LoginRestService service;
-    
     @GetMapping("")
     public String index(Model model){
         model.addAttribute("logininput",new LoginInput());
         return "formLogin";
     }
+    
     @PostMapping("login")
     public String login(LoginInput input) {
         System.out.println(input);
         System.out.println(service.login(input));
-        return "landingPage";
+        getId.id = service.getId(service.login(input));
+        return "redirect:/basic";
     }
+    
 }

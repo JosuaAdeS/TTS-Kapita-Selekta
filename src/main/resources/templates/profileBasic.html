@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form th:object="${profile}" th:action="@{/put}" method="POST">
+                <table width="25%">
+                    <tr>
+                        <td>ID</td>
+                        <td>:</td>
+                        <td><input type="text" th:field="*{id}" readonly="true"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td><input type="text" th:field="*{name}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Birth Date</td>
+                        <td>:</td>
+                        <td><input type="text" th:field="*{birthDate}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Gender</td>
+                        <td>:</td>
+                        <td>
+                            <select name="gender-list" th:field="*{gender}">
+                                <option value="Male">Laki-laki</option>
+                                <option value="Female">Perempuan</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><input type="text" th:field="*{email}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3"><input type="submit" value="Save" name="Save" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
