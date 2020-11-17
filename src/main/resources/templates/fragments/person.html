@@ -4,25 +4,18 @@
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
-                <th>AGE</th>
-                <th>GENDER</th>
-                <th></th>
-                <th></th>
+                <th>COUNT</th>
+                <th>VALID</th>
 
             </tr>
         </thead>
         <tbody>
-            <tr th:each="as : ${people}">
+            <tr th:each="as : ${universities}">
                 <td th:text="${as.id}"></td>
                 <td th:text="${as.name}"></td>
-                <td th:text="${as.gender}"></td>
-                <td th:text="${as.age}"></td>
-                <td>
-                    <a th:href="@{update/} + ${as.id}" method="REQUEST">Update</a>
-                </td>
-                <td>
-                    <a th:href="@{delete/} + ${as.id}" method="REQUEST">Delete</a>
-                </td>
+                <td th:text="${as.count}"></td>
+                <td th:text="${as.valid}"></td>
+                
             </tr>
         </tbody>
     </table>

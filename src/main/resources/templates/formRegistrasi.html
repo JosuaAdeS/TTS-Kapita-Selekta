@@ -20,11 +20,11 @@ and open the template in the editor.
             }
         </style>
     </head>
-    <body class="col-lg-12">
+    <body class="col-lg-12" style="background-color:#007bff">
     <center>
         <div class="row">
             <div class="container pt-4">
-                <div class="col-7 shadow pt-3 pb-3 br-15">
+                <div class="col-7 shadow pt-3 pb-5 br-15 mt-4 mb-5" style="background-color: white">
                     <div>
                         <div style='text-align: left'>
                             <font class='h2'> <strong> Register Form </strong> </font>
@@ -109,34 +109,8 @@ and open the template in the editor.
                                     <td> University </td>
                                     <td> 
                                         <select class="ml-30 form-control" th:field="*{university}">
-                                            <option value="Institut Bisnis dan Informatika Kwik Kian Gie"> Institut Bisnis dan Informatika Kwik Kian Gie </option>
-                                            <option value="Institut Bisnis dan Informatika Stikom Surabaya"> Institut Bisnis dan Informatika Stikom Surabaya </option>
-                                            <option value="Institut Kalbis"> Institut Kalbis </option>
-                                            <option value="Institut Pertanian Bogor"> Institut Pertanian Bogor </option>
-                                            <option value="Institut Sains dan Teknologi Al Kamal"> Institut Sains dan Teknologi Al Kamal </option>
-                                            <option value="Institut Teknologi Bandung"> Institut Teknologi Bandung </option>
-                                            <option value="Institut Teknologi Del"> Institut Teknologi Del </option>
-                                            <option value="Institut Teknologi Nasional Malang"> Institut Teknologi Nasional Malang </option>
-                                            <option value="Institut Teknologi PLN"> Institut Teknologi PLN </option>
-                                            <option value="Institut Teknologi Sepuluh November"> Institut Teknologi Sepuluh November </option>
-                                            <option value="Politeknik Caltex"> Politeknik Caltex </option>
-                                            <option value="Politeknik Elektronika Negeri Surabaya"> Politeknik Elektronika Negeri Surabaya </option>
-                                            <option value="Politeknik Pertanian Negeri Samarinda"> Politeknik Pertanian Negeri Samarinda </option>
-                                            <option value="Politeknik Pos Indonesia"> Politeknik Pos Indonesia </option>
-                                            <option value="Universitas Ahmad Dahlan"> Universitas Ahmad Dahlan </option>
-                                            <option value="Universitas Amikom Yogyakarta"> Universitas Amikom Yogyakarta </option>
-                                            <option value="Universitas Atma Jaya"> Universitas Atma Jaya </option>
-                                            <option value="Universitas Bina Nusantara"> Universitas Bina Nusantara </option>
-                                            <option value="Universitas Kristen Satya Wacana">  Universitas Kristen Satya Wacana</option>
-                                            <option value="Universitas Kristen Duta Wacana"> Universitas Kristen Duta Wacana </option>
-                                            <option value="Universitas Muhammadiyah Malang">  Universitas Muhammadiyah Malang</option>
-                                            <option value="Universitas Putra Indonesia YPTK Padang">  Universitas Putra Indonesia YPTK Padang</option>
-                                            <option value="Universitas Stikubank"> Universitas Stikubank </option>
-                                            <option value="Universitas Surabaya"> Universitas Surabaya </option>
-                                            <option value="Universitas Teknologi Yogyakarta"> Universitas Teknologi Yogyakarta </option>
-                                            <option value="Universitas Udayana"> Universitas Udayana </option>
-                                            <option value="Universitas Sanata Dharma"> Universitas Sanata Dharma </option>
-                                            <option value="Universitas PGRI Semarang"> Universitas PGRI Semarang </option>
+                                            <option th:each="as : ${universities}" th:value="${as.name}" th:text="${as.name}"></option>
+                                            
                                         </select>
                                         <!--<input type="text" class="form-control" th:field="*{university}">--> 
                                     </td>

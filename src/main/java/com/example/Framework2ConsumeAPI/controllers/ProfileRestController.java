@@ -37,6 +37,7 @@ public class ProfileRestController {
     @GetMapping("address")
     public String profileAddress(Model model){
         model.addAttribute("address", service.getProfileAddress(getId.id));
+        model.addAttribute("basic", service.getProfileBasic(getId.id));
         System.out.println(service.getProfileAddress(getId.id));
         return "profileAddress";
     }
