@@ -10,6 +10,7 @@ import com.example.Framework2ConsumeAPI.entities.rest.ProfileBasic;
 import com.example.Framework2ConsumeAPI.entities.rest.ProfileContact;
 import com.example.Framework2ConsumeAPI.entities.rest.ProfileEducation;
 import com.example.Framework2ConsumeAPI.entities.rest.ProfileOccupation;
+import com.example.Framework2ConsumeAPI.services.GetRestService;
 import com.example.Framework2ConsumeAPI.services.ProfileRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ProfileRestController {
     @Autowired
     ProfileRestService service;
+    
+    @Autowired
+    GetRestService getService;
     
     @GetMapping("basic")
     public String profileBasic(Model model){
@@ -45,6 +49,7 @@ public class ProfileRestController {
     @GetMapping("contact")
     public String profileContact(Model model){
         model.addAttribute("contact", service.getProfileContact(getId.id));
+        model.addAttribute("basic", service.getProfileBasic(getId.id));
         System.out.println(service.getProfileContact(getId.id));
         return "profileContact";
     }
@@ -52,6 +57,7 @@ public class ProfileRestController {
     @GetMapping("occupation")
     public String profileOccupation(Model model){
         model.addAttribute("occupation", service.getProfileOccupation(getId.id));
+        model.addAttribute("basic", service.getProfileBasic(getId.id));
         System.out.println(service.getProfileOccupation(getId.id));
         return "profileOccupation";
     }
@@ -59,6 +65,9 @@ public class ProfileRestController {
     @GetMapping("education")
     public String profileEducation(Model model){
         model.addAttribute("education", service.getProfileEducation(getId.id));
+        model.addAttribute("basic", service.getProfileBasic(getId.id));
+        model.addAttribute("universities", getService.getAllUniversity());
+        model.addAttribute("majors", getService.getAllMajor());
         System.out.println(service.getProfileEducation(getId.id));
         return "profileEducation";
     }

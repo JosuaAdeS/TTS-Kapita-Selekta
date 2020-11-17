@@ -5,6 +5,7 @@
  */
 package com.example.Framework2ConsumeAPI.services;
 
+import com.example.Framework2ConsumeAPI.entities.rest.Major;
 import com.example.Framework2ConsumeAPI.entities.rest.University;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,4 +37,18 @@ public class GetRestService {
         result = response.getBody();
         return result;
     }
+    
+    public List<Major> getAllMajor() {
+        List<Major> result;
+        //respon
+        ResponseEntity<List<Major>> response = restTemplate.exchange(
+                "http://116.254.101.228:8080/ma_test/get/majors",
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                new ParameterizedTypeReference<List<Major>>() {
+        });
+        result = response.getBody();
+        return result;
+    }
+    
 }

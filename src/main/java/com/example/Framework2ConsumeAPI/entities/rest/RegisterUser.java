@@ -24,7 +24,7 @@ public class RegisterUser {
     private String password;
     private String phone;
     private String status;
-    private University university;
+    private String university;
     private String username;
     
     

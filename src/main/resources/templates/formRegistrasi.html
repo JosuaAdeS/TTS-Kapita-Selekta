@@ -24,7 +24,7 @@ and open the template in the editor.
     <center>
         <div class="row">
             <div class="container pt-4">
-                <div class="col-7 shadow pt-3 pb-5 br-15 mt-4 mb-5" style="background-color: white">
+                <div class="col-7 shadow pt-3 pb-5 br-15 mt-4 mb-5 pr-5 p-5" style="background-color: white">
                     <div>
                         <div style='text-align: left'>
                             <font class='h2'> <strong> Register Form </strong> </font>
@@ -33,14 +33,14 @@ and open the template in the editor.
                     </div>
                     <hr>
                     <form th:object="${registrasi}" th:action="@{save}" method="POST">
-                        <div>
+                        <div class="pr-4">
                             <table>
                                 <tr>
                                     <td> Birth Date </td>
                                     <td> <input type="date" class="form-control ml-30" th:field="*{birthDate}"> </td>
                                 </tr>
                                 <tr>
-                                    <td> Current Company </td>
+                                    <td> Company </td>
                                     <td> <input type="text" class="form-control ml-30" th:field="*{currentCompany}"> </td>
                                 </tr>
                                 <tr>
@@ -73,18 +73,9 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td> Major </td>
-                                    <td>  
-                                        <select class="form-control ml-30" th:field="*{major}">
-                                            <option value="Teknik Informatika"> Teknik Informatika </option>
-                                            <option value="Sistem Informasi"> Sistem Informasi </option>
-                                            <option value="Teknik Kimia"> Teknik Kimia </option>
-                                            <option value="Teknik Mesin">  Teknik Mesin</option>
-                                            <option value="Hubungan Masyarakat">  Hubungan Masyaraka</option>
-                                            <option value="Teknik Elektro"> Teknik Elektro </option>
-                                            <option value="Teknik Industri">  Teknik Industri</option>
-                                            <option value="Fisika"> Fisika </option>
-                                            <option value="Kimia"> Kimia </option>
-                                            <option value="Matematika"> Matematika </option>
+                                    <td> 
+                                        <select class="ml-30 form-control" th:field="*{major}">
+                                            <option th:each="as : ${majors}" th:value="${as.name}" th:text="${as.name}"></option>
                                         </select>
                                     </td>
                                     <!--<input type="text" class="form-control" th:field="*{major}">-->
@@ -110,7 +101,6 @@ and open the template in the editor.
                                     <td> 
                                         <select class="ml-30 form-control" th:field="*{university}">
                                             <option th:each="as : ${universities}" th:value="${as.name}" th:text="${as.name}"></option>
-                                            
                                         </select>
                                         <!--<input type="text" class="form-control" th:field="*{university}">--> 
                                     </td>

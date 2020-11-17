@@ -23,11 +23,14 @@ import org.springframework.web.client.RestTemplate;
 public class RegistrationRestController {
     @Autowired
     RegistrationRestService service;
+    @Autowired
     GetRestService getService;
     
     @GetMapping("registrasi")
     public String regris(Model model){
         model.addAttribute("registrasi",new RegisterUser());
+        model.addAttribute("universities", getService.getAllUniversity());
+        model.addAttribute("majors", getService.getAllMajor());
         return "formRegistrasi";
     }
     

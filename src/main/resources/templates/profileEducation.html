@@ -19,19 +19,22 @@ and open the template in the editor.
                     <center><h5 class="mb-4 mt-3 pl-3">User Profile</h5></center>
                     <ul class="nav nav-pills flex-column pl-4 ">
                         <li class="nav-item">
-                            <a class="nav-link" href="basic">Basic</a>
+                            <a class="nav-link" href="basic"><i class="fas fa-user-alt mr-3"></i>Basic</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="address">Address</a>
+                            <a class="nav-link" href="address"><i class="fas fa-map-marker-alt mr-3"></i>Address</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact">Contact</a>
+                            <a class="nav-link" href="contact"><i class="fas fa-phone-alt mr-3"></i>Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active shadow" href="education">Education</a>
+                            <a class="nav-link active shadow" href="education"><i class="fas fa-school mr-3"></i>Education</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="occupation">Occupation</a>
+                            <a class="nav-link" href="occupation"><i class="fas fa-briefcase mr-3" ></i>Occupation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger mt-5 pt-3" href="/" ><i class="fas fa-sign-out-alt mr-3"></i>Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -41,10 +44,10 @@ and open the template in the editor.
                         <form th:object="${education}" th:action="@{/saveeducation}" method="POST">
                             <div class="d-flex flex-row">
                                 <div><img class="rounded-circle shadow ml-5 mb-5 mr-3" src="https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_business-512.png" height="100px" width="100px"></div>
-<!--                                <div class="pt-3">
-                                    <span style="font-family: 'Lucida Bright';font-size: 20px" th:text="*{name}"></span>
-                                    <p style="color: gray" th:text="*{email}"></p>
-                                </div>-->
+                                <div class="pt-3">
+                                    <span th:object="${basic}" style="font-family: 'Lucida Bright';font-size: 20px" th:text="*{name}"></span>
+                                    <p th:object="${basic}"style="color: gray" th:text="*{email}"></p>
+                                </div>
                             </div>
                             
                             <table width="100%" cellpadding="2%"class="ml-5">
@@ -55,8 +58,12 @@ and open the template in the editor.
                                 </tr>
 
                                 <tr>
-                                    <td><input type="text" class="form-control" th:field="*{degree}" style="width: 77%"/></td>
-                                    <td><input type="text" class="form-control" th:field="*{major}" style="width: 77%"/></td>
+                                    <td><input type="text" class="form-control" th:field="*{degree}" style="width: 190px"/></td>
+                                    <td>
+                                        <select class="ml-30 form-control" th:field="*{major}" style="width: 190px">
+                                            <option th:each="as : ${majors}" th:value="${as.name}" th:text="${as.name}"></option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr style="font-size: 12px;color: gray">
                                     <td>Status</td>
@@ -64,8 +71,12 @@ and open the template in the editor.
                                 </tr>
 
                                 <tr>
-                                    <td><input type="text" class="form-control" th:field="*{status}" style="width: 77%"/></td>
-                                    <td><input type="text" class="form-control" th:field="*{university}" style="width: 77%"/></td>
+                                    <td><input type="text" class="form-control" th:field="*{status}" style="width: 190px"/></td>
+                                    <td>
+                                        <select class="ml-30 form-control" th:field="*{university}" style="width: 190px">
+                                            <option th:each="as : ${universities}" th:value="${as.name}" th:text="${as.name}"></option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 
                                 <tr>
