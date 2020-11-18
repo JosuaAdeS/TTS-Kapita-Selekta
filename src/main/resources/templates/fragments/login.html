@@ -1,6 +1,6 @@
 <div th:fragment="login">
     <div class="container" style="margin-left: 20%">
-        <form th:object="${logininput}" th:action="@{login}" method="POST" style="margin-top: 60%" class="was-validated">
+        <form th:object="${logininput}" th:action="@{loginProcess}" method="POST" style="margin-top: 60%" class="was-validated">
             <table width="50%" style="margin-top: 15%;font-family: 'Playfair Display';" cellpadding="1">
                 <tr>
                     <td>Email :</td>
@@ -8,7 +8,7 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <input type="text" th:field="*{email}" class="form-control" required="true" />
+                            <input type="text" name="username" class="form-control" required="true" />
                             <div class="valid-feedback"></div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <td><div class="form-group">
-                            <input type="password" th:field="*{password}" class="form-control" required="true" />
+                            <input type="password" name="password" class="form-control" required="true" />
                             <div class="valid-feedback"></div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>

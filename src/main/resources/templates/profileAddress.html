@@ -40,7 +40,7 @@ and open the template in the editor.
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link text-danger mt-5 pt-3" href="/" ><i class="fas fa-sign-out-alt mr-3"></i>Logout</a>
+                            <a class="nav-link text-danger mt-5 pt-3" href="/logout" ><i class="fas fa-sign-out-alt mr-3"></i>Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +82,7 @@ and open the template in the editor.
                                 </tr>
                                 
                                 <tr>
-                                    <td><input type="text" class="form-control" th:field="*{zipCode}" style="width: 77%"/></td>
+                                    <td><input type="text" maxlength="5" class="form-control" th:field="*{zipCode}" style="width: 77%"/></td>
                                 </tr>
                                 
                                 <tr>
