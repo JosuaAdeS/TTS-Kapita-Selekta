@@ -19,7 +19,45 @@ and open the template in the editor.
                         <img src="https://img.freepik.com/free-vector/account-log-page_41910-263.jpg?size=626&ext=jpg" />
                     </div>
                     <div class="col-6"; style="margin-top: -17%">
-                        <div th:replace="fragments/login::login"></div>
+                        <div>
+                            <div class="container" style="margin-left: 20%">
+                                <form th:object="${logininput}" th:action="@{loginProcess}" method="POST" style="margin-top: 60%" class="was-validated">
+                                    <table width="50%" style="margin-top: 15%;font-family: 'Playfair Display';" cellpadding="1">
+                                        <tr>
+                                            <td>Email :</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" name="username" class="form-control" required="true" />
+                                                    <div class="valid-feedback"></div>
+                                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Password :</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="form-group">
+                                                    <input type="password" name="password" class="form-control" required="true" />
+                                                    <div class="valid-feedback"></div>
+                                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1" style="text-align: center">
+                                                <button type="submit" value="Login" name="Login" class="btn btn-primary float-md-right">Login</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                                <br>
+                                <span>Don't have any account? <a href="registrasi">Sign Up</a></span>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

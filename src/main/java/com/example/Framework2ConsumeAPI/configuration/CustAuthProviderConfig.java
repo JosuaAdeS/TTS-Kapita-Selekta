@@ -28,7 +28,7 @@ public class CustAuthProviderConfig extends WebSecurityConfigurerAdapter {
  
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/registrasi").permitAll().anyRequest().authenticated()
+        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/registrasi").permitAll().antMatchers("/save").permitAll().anyRequest().authenticated()
             .and().httpBasic().and().formLogin().loginPage("/").loginProcessingUrl("/loginProcess").defaultSuccessUrl("/basic",true)
             .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
     
